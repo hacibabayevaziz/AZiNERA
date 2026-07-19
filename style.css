@@ -1,3 +1,4 @@
+/* Qlobal Tənzimləmələr */
 * {
     margin: 0;
     padding: 0;
@@ -28,13 +29,12 @@ body {
     --border-light: #e6ebe7;
 }
 
-/* Header & Navigasiya */
+/* Müasir və Sabit Üst Menyu */
 header {
-    background-color: rgba(255, 255, 255, 0.97);
+    background-color: #ffffff !important; /* Yaşıl fonu tamamilə ağ etdik */
     border-bottom: 1px solid var(--border-light);
-    position: fixed;
+    position: relative;
     width: 100%;
-    top: 0;
     z-index: 999;
 }
 
@@ -42,11 +42,11 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 0;
+    padding: 20px 0;
 }
 
 .logo {
-    font-size: 22px;
+    font-size: 24px;
     font-weight: 700;
     text-decoration: none;
     letter-spacing: 2px;
@@ -62,15 +62,9 @@ header {
 .nav-links a {
     text-decoration: none;
     color: #444;
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
-    transition: color 0.3s;
-}
-
-.nav-links a:hover {
-    color: var(--soft-green);
 }
 
 .auth-buttons {
@@ -79,15 +73,13 @@ header {
 }
 
 .auth-btn {
-    padding: 8px 18px;
+    padding: 10px 20px;
     background: none;
     border: 1px solid var(--emerald-green);
     color: var(--emerald-green);
-    font-weight: 500;
-    font-size: 13px;
+    font-weight: 600;
     cursor: pointer;
-    border-radius: 3px;
-    transition: all 0.3s;
+    border-radius: 4px;
 }
 
 .register-trigger {
@@ -95,245 +87,85 @@ header {
     color: white;
 }
 
-.register-trigger:hover {
-    background-color: var(--gold-accent);
-    border-color: var(--gold-accent);
-}
-
-/* Hero */
-.hero-section {
-    position: relative;
-    background-image: url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1600&q=80');
-    background-size: cover;
-    background-position: center;
-    height: 55vh;
-    display: flex;
-    align-items: center;
-    margin-top: 65px;
-}
-
-.hero-overlay {
-    position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: linear-gradient(to right, rgba(10, 61, 46, 0.9), rgba(0, 0, 0, 0.5));
-}
-
-.hero-content {
-    position: relative;
-    color: white;
-    z-index: 2;
-}
-
-.sub-title {
-    color: var(--gold-accent);
-    text-transform: uppercase;
-    font-size: 12px;
-    letter-spacing: 3px;
-    font-weight: 600;
-}
-
-.hero-content h2 {
-    font-size: 46px;
-    margin: 10px 0;
-}
-
-.main-btn {
-    display: inline-block;
-    padding: 12px 28px;
-    background-color: white;
-    color: var(--emerald-green);
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 13px;
-    border-radius: 3px;
-    margin-top: 15px;
-}
-
-/* Catalog */
-.catalog-section {
-    padding: 60px 0 10px 0;
-}
-
-.section-header {
-    text-align: center;
-    margin-bottom: 35px;
-}
-
-.category-tag {
-    font-size: 11px;
-    text-transform: uppercase;
-    color: var(--soft-green);
-    font-weight: 600;
-    letter-spacing: 1px;
-}
-
-.section-header h2 {
-    font-size: 26px;
-    color: var(--dark-neutral);
-}
-
-.underline {
-    width: 40px;
-    height: 2px;
-    background-color: var(--gold-accent);
-    margin: 8px auto 0 auto;
-}
-
+/* Şəkillərin HD və Düzgün Ölçüdə Görünməsi */
 .grid-layout {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 25px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
 }
 
 .item-card {
     background: white;
     border: 1px solid var(--border-light);
-    border-radius: 4px;
+    border-radius: 6px;
     overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.02);
 }
-
-.item-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 25px rgba(0,0,0,0.05);
-}
-
-.bg-gold:hover { border-bottom: 2px solid var(--gold-accent); }
-.bg-green:hover { border-bottom: 2px solid var(--soft-green); }
 
 .img-wrapper {
     width: 100%;
-    height: 280px;
-    background-color: #f5f5f5;
+    height: 350px; /* Şəkillərin çox böyük olmasının qarşısını alır */
+    overflow: hidden;
 }
 
 .img-wrapper img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: cover; /* Şəkli HD keyfiyyətdə qutunun içinə tam otuzdurur */
 }
 
 .card-info {
-    padding: 18px;
+    padding: 20px;
 }
 
 .sub-cat {
-    font-size: 11px;
-    color: #888;
+    display: inline-block;
+    font-size: 12px;
+    color: var(--gold-accent);
+    font-weight: 700;
     text-transform: uppercase;
-}
-
-.card-info h3 {
-    font-size: 16px;
-    font-weight: 600;
-    margin: 4px 0 12px 0;
+    margin-bottom: 5px;
 }
 
 .card-footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-top: 15px;
+    padding-top: 15px;
     border-top: 1px solid var(--border-light);
-    padding-top: 12px;
 }
 
 .item-price {
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 700;
     color: var(--emerald-green);
 }
 
 .buy-btn {
-    padding: 6px 14px;
-    background-color: transparent;
-    border: 1px solid var(--emerald-green);
-    color: var(--emerald-green);
-    font-size: 12px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: 0.2s;
-}
-
-.buy-btn:hover {
-    background-color: var(--emerald-green);
-    color: white;
-}
-
-/* Modallar (Popup) */
-.modal-overlay {
-    position: fixed;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background-color: rgba(0,0,0,0.6);
-    z-index: 10000;
-    display: none;
-    align-items: center;
-    justify-content: center;
-}
-
-.modal-box {
-    background: white;
-    padding: 30px;
-    width: 90%;
-    max-width: 400px;
-    border-radius: 4px;
-    position: relative;
-    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
-}
-
-.close-btn {
-    position: absolute;
-    top: 10px; right: 15px;
-    font-size: 24px;
-    cursor: pointer;
-    color: #aaa;
-}
-
-.modal-box h3 {
-    margin-bottom: 20px;
-    color: var(--emerald-green);
-    font-size: 20px;
-}
-
-.modal-box input {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 12px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-    font-family: inherit;
-}
-
-.input-row {
-    display: flex;
-    gap: 10px;
-}
-
-.submit-btn {
-    width: 100%;
-    padding: 12px;
+    padding: 8px 16px;
     background-color: var(--emerald-green);
     color: white;
     border: none;
     font-weight: 600;
     cursor: pointer;
-    border-radius: 3px;
+    border-radius: 4px;
 }
 
-.payment-btn {
-    background-color: var(--gold-accent);
-}
-
-footer {
-    background-color: var(--dark-neutral);
-    color: #777;
-    padding: 30px 0;
-    text-align: center;
-    font-size: 12px;
-    margin-top: 50px;
-}
-
+/* Mobil Telefonlar Üçün Düzəliş (Üst-üstə minməməsi üçün) */
 @media (max-width: 768px) {
-    .navbar { flex-direction: column; gap: 10px; }
-    .nav-links { gap: 15px; }
-    .hero-content h2 { font-size: 32px; }
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+    .nav-links {
+        flex-direction: row;
+        gap: 15px;
+        justify-content: center;
+    }
+    .img-wrapper {
+        height: 300px;
+    }
 }
