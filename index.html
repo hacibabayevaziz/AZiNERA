@@ -3,108 +3,238 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AZiNERA - Bijuteriya və Aksesuarlar</title>
+    <title>AZiNERA | Luxury E-Commerce</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Şriftlər üçün Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <!-- Naviqasiya Menyusu -->
+    <!-- Üst Menyu və İstifadəçi Paneli -->
     <header>
-        <div class="container">
-            <h1 class="logo">AZiNERA</h1>
+        <div class="navbar container">
+            <a href="#" class="logo">AZiNERA</a>
             <nav>
-                <ul>
+                <ul class="nav-links">
                     <li><a href="#bijuteriya">Bijuteriya</a></li>
                     <li><a href="#ayaqqabi">Ayaqqabı</a></li>
                     <li><a href="#cantalar">Çantalar</a></li>
                 </ul>
             </nav>
+            <div class="auth-buttons">
+                <button class="auth-btn" onclick="toggleModal('login-modal')">Giriş</button>
+                <button class="auth-btn register-trigger" onclick="toggleModal('register-modal')">Qeydiyyat</button>
+            </div>
         </div>
     </header>
 
-    <!-- Qəhrəman Bölməsi (Hero Section) -->
-    <section class="hero">
-        <div class="container hero-content">
-            <h2>Dəb və Zəriflik Bir Arada</h2>
-            <p>Ən son trendlərə uyğun kolleksiyamızı kəşf edin.</p>
-            <a href="#bijuteriya" class="btn">İndi Al</a>
+    <!-- Hero Giriş Səhifəsi -->
+    <section class="hero-section">
+        <div class="hero-overlay"></div>
+        <div class="hero-content container">
+            <span class="sub-title">Premium Seçimlər</span>
+            <h2>Eksklüziv Modalar</h2>
+            <p>Bijuteriya, ayaqqabı və çantaların ən professional şəkildə toplanmış kolleksiyası.</p>
+            <a href="#bijuteriya" class="main-btn">Kataloqu Kəşf Et</a>
         </div>
     </section>
 
-    <!-- Bijuteriya Bölməsi -->
-    <section id="bijuteriya" class="products">
-        <div class="container">
-            <h2 class="section-title">Parlaq Bijuteriyalar</h2>
-            <div class="product-grid">
-                <!-- Məhsul 1 -->
-                <div class="product-card yellow-card">
-                    <img src="https://via.placeholder.com/250x200?text=Sirqa" alt="Sırqa">
-                    <h3>Qızılı Sırqa</h3>
-                    <p>Zərif dizayn</p>
-                    <span class="price">25.00 AZN</span>
+    <!-- BİJUTERİYA VƏ ALT KATEQORİYALARI -->
+    <section id="bijuteriya" class="catalog-section container">
+        <div class="section-header">
+            <span class="category-tag">Kolleksiya</span>
+            <h2>Lüks Bijuteriyalar</h2>
+            <div class="underline"></div>
+        </div>
+        
+        <div class="grid-layout">
+            <!-- Üzüklər -->
+            <div class="item-card bg-gold">
+                <div class="img-wrapper"><img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=600&q=80" alt="Üzük"></div>
+                <div class="card-info">
+                    <span class="sub-cat">Üzüklər</span>
+                    <h3>Brilliant Kəsim Üzük</h3>
+                    <div class="card-footer">
+                        <span class="item-price">75.00 AZN</span>
+                        <button class="buy-btn" onclick="openCheckout('Brilliant Kəsim Üzük', '75.00 AZN')">Satın Al</button>
+                    </div>
                 </div>
-                <!-- Məhsul 2 -->
-                <div class="product-card green-card">
-                    <img src="https://via.placeholder.com/250x200?text=Boyunbagi" alt="Boyunbağı">
-                    <h3>Zümrüd Boyunbağı</h3>
-                    <p>Xüsusi daşlarla</p>
-                    <span class="price">45.00 AZN</span>
+            </div>
+
+            <!-- Boyunbağı -->
+            <div class="item-card bg-green">
+                <div class="img-wrapper"><img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=600&q=80" alt="Boyunbağı"></div>
+                <div class="card-info">
+                    <span class="sub-cat">Boyunbağı</span>
+                    <h3>Zümrüd Daşlı Boyunbağı</h3>
+                    <div class="card-footer">
+                        <span class="item-price">45.00 AZN</span>
+                        <button class="buy-btn" onclick="openCheckout('Zümrüd Daşlı Boyunbağı', '45.00 AZN')">Satın Al</button>
+                    </div>
                 </div>
-                <!-- Bura daha çox məhsul əlavə edilə bilər -->
+            </div>
+
+            <!-- Qolbaqlar -->
+            <div class="item-card bg-gold">
+                <div class="img-wrapper"><img src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=600&q=80" alt="Qolbaq"></div>
+                <div class="card-info">
+                    <span class="sub-cat">Qolbaqlar</span>
+                    <h3>İncə Qızılı Qolbaq</h3>
+                    <div class="card-footer">
+                        <span class="item-price">35.00 AZN</span>
+                        <button class="buy-btn" onclick="openCheckout('İncə Qızılı Qolbaq', '35.00 AZN')">Satın Al</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pirsinq -->
+            <div class="item-card bg-green">
+                <div class="img-wrapper"><img src="https://images.unsplash.com/photo-1590595603638-e6d2315fa764?w=600&q=80" alt="Pirsinq"></div>
+                <div class="card-info">
+                    <span class="sub-cat">Pirsinq</span>
+                    <h3>Minimalist Titan Pirsinq</h3>
+                    <div class="card-footer">
+                        <span class="item-price">20.00 AZN</span>
+                        <button class="buy-btn" onclick="openCheckout('Minimalist Titan Pirsinq', '20.00 AZN')">Satın Al</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ayaq üçün qolbaqlar -->
+            <div class="item-card bg-gold">
+                <div class="img-wrapper"><img src="https://images.unsplash.com/photo-1543294001-f7cbfe92237e?w=600&q=80" alt="Ayaq Qolbağı"></div>
+                <div class="card-info">
+                    <span class="sub-cat">Ayaq Qolbaqları</span>
+                    <h3>Dəniz Qabığı Ayaq Qolbağı</h3>
+                    <div class="card-footer">
+                        <span class="item-price">18.00 AZN</span>
+                        <button class="buy-btn" onclick="openCheckout('Dəniz Qabığı Ayaq Qolbağı', '18.00 AZN')">Satın Al</button>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Ayaqqabı Bölməsi -->
-    <section id="ayaqqabi" class="products dark-bg">
-        <div class="container">
-            <h2 class="section-title yellow-text">Rahat Ayaqqabılar</h2>
-            <div class="product-grid">
-                <div class="product-card green-card">
-                    <img src="https://via.placeholder.com/250x200?text=Bot" alt="Bot">
-                    <h3>Dəri Bot</h3>
-                    <p>Payız kolleksiyası</p>
-                    <span class="price">89.99 AZN</span>
+    <!-- AYAQQABILAR -->
+    <section id="ayaqqabi" class="catalog-section container">
+        <div class="section-header">
+            <span class="category-tag">Premium</span>
+            <h2>Dəb Ayaqqabıları</h2>
+            <div class="underline"></div>
+        </div>
+        <div class="grid-layout">
+            <div class="item-card bg-green">
+                <div class="img-wrapper"><img src="https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=600&q=80" alt="Ayaqqabı"></div>
+                <div class="card-info">
+                    <span class="sub-cat">Hündürdaban</span>
+                    <h3>Süet İtalyan Stiletto</h3>
+                    <div class="card-footer">
+                        <span class="item-price">95.00 AZN</span>
+                        <button class="buy-btn" onclick="openCheckout('Süet İtalyan Stiletto', '95.00 AZN')">Satın Al</button>
+                    </div>
                 </div>
-                <div class="product-card yellow-card">
-                    <img src="https://via.placeholder.com/250x200?text=Krossovka" alt="Krossovka">
-                    <h3>İdman Ayaqqabısı</h3>
-                    <p>Gündəlik rahatlıq</p>
-                    <span class="price">65.00 AZN</span>
+            </div>
+            <div class="item-card bg-gold">
+                <div class="img-wrapper"><img src="https://images.unsplash.com/photo-1460353581641-37badd4524f6?w=600&q=80" alt="Ayaqqabı"></div>
+                <div class="card-info">
+                    <span class="sub-cat">İdman</span>
+                    <h3>Urban Komfort Krossovka</h3>
+                    <div class="card-footer">
+                        <span class="item-price">65.00 AZN</span>
+                        <button class="buy-btn" onclick="openCheckout('Urban Komfort Krossovka', '65.00 AZN')">Satın Al</button>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Çantalar Bölməsi -->
-    <section id="cantalar" class="products">
-        <div class="container">
-            <h2 class="section-title">Şık Çantalar</h2>
-            <div class="product-grid">
-                <div class="product-card yellow-card">
-                    <img src="https://via.placeholder.com/250x200?text=El+Cantasi" alt="Əl Çantası">
-                    <h3>Dəri Əl Çantası</h3>
-                    <p>Klassik stil</p>
-                    <span class="price">120.00 AZN</span>
-                </div>
-                <div class="product-card green-card">
-                    <img src="https://via.placeholder.com/250x200?text=Kurek+Cantasi" alt="Kürək Çantası">
-                    <h3>Müasir Kürək Çantası</h3>
-                    <p>Gənc dizayn</p>
-                    <span class="price">55.00 AZN</span>
+    <!-- ÇANTALAR -->
+    <section id="cantalar" class="catalog-section container">
+        <div class="section-header">
+            <span class="category-tag">Dəbdəbə</span>
+            <h2>Dəri Çantalar</h2>
+            <div class="underline"></div>
+        </div>
+        <div class="grid-layout">
+            <div class="item-card bg-gold">
+                <div class="img-wrapper"><img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=600&q=80" alt="Çanta"></div>
+                <div class="card-info">
+                    <span class="sub-cat">Əl Çantası</span>
+                    <h3>Klassik Minimalist Çanta</h3>
+                    <div class="card-footer">
+                        <span class="item-price">140.00 AZN</span>
+                        <button class="buy-btn" onclick="openCheckout('Klassik Minimalist Çanta', '140.00 AZN')">Satın Al</button>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer (Aşağı hissə) -->
+    <!-- QEYDİYYAT MODALI (POPUP) -->
+    <div id="register-modal" class="modal-overlay">
+        <div class="modal-box">
+            <span class="close-btn" onclick="toggleModal('register-modal')">&times;</span>
+            <h3>Hesab Yarat</h3>
+            <form onsubmit="event.preventDefault(); alert('Qeydiyyat uğurludur!'); toggleModal('register-modal');">
+                <input type="text" placeholder="Adınız və Soyadınız" required>
+                <input type="email" placeholder="E-poçt ünvanı" required>
+                <input type="password" placeholder="Şifrə" required>
+                <button type="submit" class="submit-btn">Hesabı Təsdiqlə</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- GİRİŞ MODALI -->
+    <div id="login-modal" class="modal-overlay">
+        <div class="modal-box">
+            <span class="close-btn" onclick="toggleModal('login-modal')">&times;</span>
+            <h3>Sistemə Giriş</h3>
+            <form onsubmit="event.preventDefault(); alert('Giriş edildi!'); toggleModal('login-modal');">
+                <input type="email" placeholder="E-poçt" required>
+                <input type="password" placeholder="Şifrə" required>
+                <button type="submit" class="submit-btn">Giriş Et</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- KARTLA ÖDƏNİŞ MODALI (CHECKOUT) -->
+    <div id="checkout-modal" class="modal-overlay">
+        <div class="modal-box billing-box">
+            <span class="close-btn" onclick="toggleModal('checkout-modal')">&times;</span>
+            <h3>Təhlükəsiz Kart Ödənişi</h3>
+            <p id="checkout-item-name" style="font-weight:600; color:var(--emerald-green); margin-bottom:15px;"></p>
+            <form onsubmit="event.preventDefault(); alert('Ödəniş uğurla tamamlandı! Sifarişiniz qəbul olundu.'); toggleModal('checkout-modal');">
+                <input type="text" placeholder="Kartın Üzərindəki Ad" required>
+                <input type="text" placeholder="Kart Nömrəsi (16 rəqəmli)" maxlength="16" required>
+                <div class="input-row">
+                    <input type="text" placeholder="AA / YY" maxlength="5" required>
+                    <input type="password" placeholder="CVV" maxlength="3" required>
+                </div>
+                <button type="submit" class="submit-btn payment-btn">Ödəniş Et (<span id="checkout-price">0</span>)</button>
+            </form>
+        </div>
+    </div>
+
     <footer>
         <div class="container">
-            <p>&copy; 2023 AZiNERA. Bütün hüquqlar qorunur.</p>
+            <p>&copy; 2026 AZiNERA. Professional E-Commerce Store.</p>
         </div>
     </footer>
 
+    <!-- Modalları və Ödənişi idarə edən Skript -->
+    <script>
+        function toggleModal(id) {
+            const modal = document.getElementById(id);
+            if (modal.style.display === "flex") {
+                modal.style.display = "none";
+            } else {
+                modal.style.display = "flex";
+            }
+        }
+        function openCheckout(name, price) {
+            document.getElementById('checkout-item-name').innerText = name;
+            document.getElementById('checkout-price').innerText = price;
+            toggleModal('checkout-modal');
+        }
+    </script>
 </body>
 </html>
