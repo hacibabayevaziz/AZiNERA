@@ -1,0 +1,88 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f7f7f7;
+    color: #222;
+}
+
+/* Header */
+header {
+    background: #111;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.logo {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+/* Main */
+.container {
+    padding: 20px;
+}
+
+/* Məhsullar */
+.products {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.product {
+    background: white;
+    width: 250px;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.product img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.product h3 {
+    margin: 10px 0;
+}
+
+.price {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Düymə */
+button {
+    background: #111;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #333;
+}
+
+/* Footer */
+footer {
+    background: #111;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 30px;
+}
