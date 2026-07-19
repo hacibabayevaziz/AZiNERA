@@ -1,211 +1,339 @@
-/* Əsas tənzimləmələr */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #fcfcfc;
-    color: #333;
-    line-height: 1.6;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: #fafbfa;
+    color: #151515;
 }
 
 .container {
-    width: 85%;
+    width: 90%;
+    max-width: 1200px;
     margin: 0 auto;
-    overflow: hidden;
 }
 
-/* Rəng Palitrası */
 :root {
-    --primary-yellow: #f1c40f; /* Parlaq Sarı */
-    --secondary-yellow: #f39c12; /* Tünd Sarı */
-    --primary-green: #2ecc71; /* Parlaq Yaşıl */
-    --secondary-green: #27ae60; /* Tünd Yaşıl */
-    --dark-bg: #2c3e50; /* Tünd Boz (kontrast üçün) */
-    --light-text: #ecf0f1;
+    --emerald-green: #0a3d2e;
+    --soft-green: #16644d;
+    --gold-accent: #c5a028;
+    --dark-neutral: #0b0d0c;
+    --border-light: #e6ebe7;
 }
 
-/* Header */
+/* Header & Navigasiya */
 header {
-    background-color: var(--primary-green);
-    color: white;
-    padding: 20px 0;
+    background-color: rgba(255, 255, 255, 0.97);
+    border-bottom: 1px solid var(--border-light);
     position: fixed;
     width: 100%;
     top: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    z-index: 999;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
 }
 
 .logo {
-    float: left;
-    font-size: 28px;
-    font-weight: 600;
-    color: var(--primary-yellow);
-}
-
-nav {
-    float: right;
-}
-
-nav ul {
-    list-style: none;
-}
-
-nav ul li {
-    display: inline;
-    margin-left: 20px;
-}
-
-nav ul li a {
+    font-size: 22px;
+    font-weight: 700;
     text-decoration: none;
-    color: white;
-    font-weight: 400;
-    transition: color 0.3s ease;
+    letter-spacing: 2px;
+    color: var(--emerald-green);
 }
 
-nav ul li a:hover {
-    color: var(--primary-yellow);
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 25px;
 }
 
-/* Hero Section */
-.hero {
-    background: linear-gradient(135deg, var(--primary-yellow) 0%, var(--primary-green) 100%);
+.nav-links a {
+    text-decoration: none;
+    color: #444;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--soft-green);
+}
+
+.auth-buttons {
+    display: flex;
+    gap: 12px;
+}
+
+.auth-btn {
+    padding: 8px 18px;
+    background: none;
+    border: 1px solid var(--emerald-green);
+    color: var(--emerald-green);
+    font-weight: 500;
+    font-size: 13px;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: all 0.3s;
+}
+
+.register-trigger {
+    background-color: var(--emerald-green);
     color: white;
-    height: 80vh;
+}
+
+.register-trigger:hover {
+    background-color: var(--gold-accent);
+    border-color: var(--gold-accent);
+}
+
+/* Hero */
+.hero-section {
+    position: relative;
+    background-image: url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1600&q=80');
+    background-size: cover;
+    background-position: center;
+    height: 55vh;
     display: flex;
     align-items: center;
-    justify-content: center;
-    text-align: center;
-    margin-top: 80px; /* Header üçün boşluq */
+    margin-top: 65px;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(to right, rgba(10, 61, 46, 0.9), rgba(0, 0, 0, 0.5));
+}
+
+.hero-content {
+    position: relative;
+    color: white;
+    z-index: 2;
+}
+
+.sub-title {
+    color: var(--gold-accent);
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 3px;
+    font-weight: 600;
 }
 
 .hero-content h2 {
-    font-size: 48px;
-    margin-bottom: 20px;
+    font-size: 46px;
+    margin: 10px 0;
 }
 
-.hero-content p {
-    font-size: 18px;
-    margin-bottom: 30px;
-}
-
-.btn {
+.main-btn {
     display: inline-block;
-    padding: 10px 30px;
-    background-color: var(--dark-bg);
-    color: white;
+    padding: 12px 28px;
+    background-color: white;
+    color: var(--emerald-green);
     text-decoration: none;
-    border-radius: 25px;
     font-weight: 600;
-    transition: background-color 0.3s ease;
+    font-size: 13px;
+    border-radius: 3px;
+    margin-top: 15px;
 }
 
-.btn:hover {
-    background-color: #34495e;
+/* Catalog */
+.catalog-section {
+    padding: 60px 0 10px 0;
 }
 
-/* Məhsullar Bölməsi */
-.products {
-    padding: 60px 0;
-}
-
-.section-title {
+.section-header {
     text-align: center;
-    font-size: 36px;
-    margin-bottom: 40px;
-    color: var(--secondary-green);
+    margin-bottom: 35px;
 }
 
-.dark-bg {
-    background-color: var(--dark-bg);
-    color: var(--light-text);
+.category-tag {
+    font-size: 11px;
+    text-transform: uppercase;
+    color: var(--soft-green);
+    font-weight: 600;
+    letter-spacing: 1px;
 }
 
-.yellow-text {
-    color: var(--primary-yellow) !important;
+.section-header h2 {
+    font-size: 26px;
+    color: var(--dark-neutral);
 }
 
-.product-grid {
+.underline {
+    width: 40px;
+    height: 2px;
+    background-color: var(--gold-accent);
+    margin: 8px auto 0 auto;
+}
+
+.grid-layout {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
 }
 
-.product-card {
+.item-card {
     background: white;
-    border-radius: 10px;
-    padding: 20px;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    border: 1px solid var(--border-light);
+    border-radius: 4px;
+    overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border-top: 5px solid;
 }
 
-.product-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+.item-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.05);
 }
 
-.yellow-card {
-    border-color: var(--primary-yellow);
+.bg-gold:hover { border-bottom: 2px solid var(--gold-accent); }
+.bg-green:hover { border-bottom: 2px solid var(--soft-green); }
+
+.img-wrapper {
+    width: 100%;
+    height: 280px;
+    background-color: #f5f5f5;
 }
 
-.green-card {
-    border-color: var(--primary-green);
+.img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
-.product-card img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 5px;
-    margin-bottom: 15px;
+.card-info {
+    padding: 18px;
 }
 
-.product-card h3 {
-    font-size: 20px;
-    margin-bottom: 10px;
+.sub-cat {
+    font-size: 11px;
+    color: #888;
+    text-transform: uppercase;
 }
 
-.product-card p {
-    color: #777;
-    font-size: 14px;
-    margin-bottom: 15px;
-}
-
-.dark-bg .product-card p {
-    color: #bbb;
-}
-
-.price {
+.card-info h3 {
+    font-size: 16px;
     font-weight: 600;
-    font-size: 18px;
-    color: var(--secondary-green);
+    margin: 4px 0 12px 0;
 }
 
-/* Footer */
-footer {
-    background-color: var(--secondary-green);
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid var(--border-light);
+    padding-top: 12px;
+}
+
+.item-price {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--emerald-green);
+}
+
+.buy-btn {
+    padding: 6px 14px;
+    background-color: transparent;
+    border: 1px solid var(--emerald-green);
+    color: var(--emerald-green);
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.buy-btn:hover {
+    background-color: var(--emerald-green);
     color: white;
+}
+
+/* Modallar (Popup) */
+.modal-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.6);
+    z-index: 10000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-box {
+    background: white;
+    padding: 30px;
+    width: 90%;
+    max-width: 400px;
+    border-radius: 4px;
+    position: relative;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px; right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #aaa;
+}
+
+.modal-box h3 {
+    margin-bottom: 20px;
+    color: var(--emerald-green);
+    font-size: 20px;
+}
+
+.modal-box input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 12px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-family: inherit;
+}
+
+.input-row {
+    display: flex;
+    gap: 10px;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--emerald-green);
+    color: white;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.payment-btn {
+    background-color: var(--gold-accent);
+}
+
+footer {
+    background-color: var(--dark-neutral);
+    color: #777;
     padding: 30px 0;
     text-align: center;
+    font-size: 12px;
+    margin-top: 50px;
 }
 
-/* Mobil uyğunlaşdırma */
 @media (max-width: 768px) {
-    .logo, nav {
-        float: none;
-        text-align: center;
-        width: 100%;
-    }
-    nav ul li {
-        display: block;
-        margin: 10px 0;
-    }
-    .hero-content h2 {
-        font-size: 32px;
-    }
+    .navbar { flex-direction: column; gap: 10px; }
+    .nav-links { gap: 15px; }
+    .hero-content h2 { font-size: 32px; }
 }
