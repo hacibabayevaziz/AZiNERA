@@ -1,165 +1,110 @@
 <!DOCTYPE html>
 <html lang="az">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AZINERA</title>
-
-<style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial,sans-serif;
-}
-
-body{
-background:#f7f7f7;
-}
-
-header{
-background:#000;
-color:#d4af37;
-padding:20px;
-text-align:center;
-font-size:40px;
-font-weight:bold;
-}
-
-nav{
-display:flex;
-justify-content:center;
-gap:25px;
-background:white;
-padding:15px;
-box-shadow:0 2px 5px rgba(0,0,0,.1);
-}
-
-nav a{
-text-decoration:none;
-color:black;
-font-weight:bold;
-}
-
-.hero{
-height:300px;
-background:linear-gradient(135deg,#111,#444);
-color:white;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-}
-
-.hero h1{
-font-size:42px;
-}
-
-.hero p{
-margin-top:10px;
-font-size:20px;
-}
-
-.products{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
-padding:30px;
-}
-
-.card{
-background:white;
-border-radius:15px;
-overflow:hidden;
-box-shadow:0 5px 15px rgba(0,0,0,.15);
-transition:.3s;
-}
-
-.card:hover{
-transform:translateY(-5px);
-}
-
-.card img{
-width:100%;
-height:250px;
-object-fit:cover;
-}
-
-.card h2{
-padding:15px;
-}
-
-.price{
-padding:0 15px;
-font-size:22px;
-color:#d4af37;
-font-weight:bold;
-}
-
-button{
-margin:15px;
-width:calc(100% - 30px);
-padding:12px;
-background:#d4af37;
-border:none;
-border-radius:10px;
-font-size:17px;
-cursor:pointer;
-}
-
-footer{
-margin-top:30px;
-background:black;
-color:white;
-padding:20px;
-text-align:center;
-}
-</style>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AZiNERA - Bijuteriya və Aksesuarlar</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Şriftlər üçün Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<header>AZINERA</header>
+    <!-- Naviqasiya Menyusu -->
+    <header>
+        <div class="container">
+            <h1 class="logo">AZiNERA</h1>
+            <nav>
+                <ul>
+                    <li><a href="#bijuteriya">Bijuteriya</a></li>
+                    <li><a href="#ayaqqabi">Ayaqqabı</a></li>
+                    <li><a href="#cantalar">Çantalar</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-<nav>
-<a href="#">💍 Bijuteriya</a>
-<a href="#">👜 Çantalar</a>
-<a href="#">👠 Ayaqqabılar</a>
-</nav>
+    <!-- Qəhrəman Bölməsi (Hero Section) -->
+    <section class="hero">
+        <div class="container hero-content">
+            <h2>Dəb və Zəriflik Bir Arada</h2>
+            <p>Ən son trendlərə uyğun kolleksiyamızı kəşf edin.</p>
+            <a href="#bijuteriya" class="btn">İndi Al</a>
+        </div>
+    </section>
 
-<section class="hero">
-<h1>Yeni Kolleksiya</h1>
-<p>Zövqlü Qadın Aksesuarları</p>
-</section>
+    <!-- Bijuteriya Bölməsi -->
+    <section id="bijuteriya" class="products">
+        <div class="container">
+            <h2 class="section-title">Parlaq Bijuteriyalar</h2>
+            <div class="product-grid">
+                <!-- Məhsul 1 -->
+                <div class="product-card yellow-card">
+                    <img src="https://via.placeholder.com/250x200?text=Sirqa" alt="Sırqa">
+                    <h3>Qızılı Sırqa</h3>
+                    <p>Zərif dizayn</p>
+                    <span class="price">25.00 AZN</span>
+                </div>
+                <!-- Məhsul 2 -->
+                <div class="product-card green-card">
+                    <img src="https://via.placeholder.com/250x200?text=Boyunbagi" alt="Boyunbağı">
+                    <h3>Zümrüd Boyunbağı</h3>
+                    <p>Xüsusi daşlarla</p>
+                    <span class="price">45.00 AZN</span>
+                </div>
+                <!-- Bura daha çox məhsul əlavə edilə bilər -->
+            </div>
+        </div>
+    </section>
 
-<section class="products">
+    <!-- Ayaqqabı Bölməsi -->
+    <section id="ayaqqabi" class="products dark-bg">
+        <div class="container">
+            <h2 class="section-title yellow-text">Rahat Ayaqqabılar</h2>
+            <div class="product-grid">
+                <div class="product-card green-card">
+                    <img src="https://via.placeholder.com/250x200?text=Bot" alt="Bot">
+                    <h3>Dəri Bot</h3>
+                    <p>Payız kolleksiyası</p>
+                    <span class="price">89.99 AZN</span>
+                </div>
+                <div class="product-card yellow-card">
+                    <img src="https://via.placeholder.com/250x200?text=Krossovka" alt="Krossovka">
+                    <h3>İdman Ayaqqabısı</h3>
+                    <p>Gündəlik rahatlıq</p>
+                    <span class="price">65.00 AZN</span>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<div class="card">
-<img src="https://picsum.photos/400/400?1">
-<h2>Boyunbağı</h2>
-<div class="price">24 AZN</div>
-<button>Səbətə əlavə et</button>
-</div>
+    <!-- Çantalar Bölməsi -->
+    <section id="cantalar" class="products">
+        <div class="container">
+            <h2 class="section-title">Şık Çantalar</h2>
+            <div class="product-grid">
+                <div class="product-card yellow-card">
+                    <img src="https://via.placeholder.com/250x200?text=El+Cantasi" alt="Əl Çantası">
+                    <h3>Dəri Əl Çantası</h3>
+                    <p>Klassik stil</p>
+                    <span class="price">120.00 AZN</span>
+                </div>
+                <div class="product-card green-card">
+                    <img src="https://via.placeholder.com/250x200?text=Kurek+Cantasi" alt="Kürək Çantası">
+                    <h3>Müasir Kürək Çantası</h3>
+                    <p>Gənc dizayn</p>
+                    <span class="price">55.00 AZN</span>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<div class="card">
-<img src="https://picsum.photos/400/400?2">
-<h2>Qadın Çantası</h2>
-<div class="price">69 AZN</div>
-<button>Səbətə əlavə et</button>
-</div>
-
-<div class="card">
-<img src="https://picsum.photos/400/400?3">
-<h2>Ayaqqabı</h2>
-<div class="price">95 AZN</div>
-<button>Səbətə əlavə et</button>
-</div>
-
-</section>
-
-<footer>
-© 2026 AZINERA
-</footer>
+    <!-- Footer (Aşağı hissə) -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 AZiNERA. Bütün hüquqlar qorunur.</p>
+        </div>
+    </footer>
 
 </body>
 </html>
