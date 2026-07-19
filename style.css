@@ -1,88 +1,211 @@
+/* Əsas tənzimləmələr */
 * {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #f7f7f7;
-    color: #222;
+    font-family: 'Poppins', sans-serif;
+    background-color: #fcfcfc;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    width: 85%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+/* Rəng Palitrası */
+:root {
+    --primary-yellow: #f1c40f; /* Parlaq Sarı */
+    --secondary-yellow: #f39c12; /* Tünd Sarı */
+    --primary-green: #2ecc71; /* Parlaq Yaşıl */
+    --secondary-green: #27ae60; /* Tünd Yaşıl */
+    --dark-bg: #2c3e50; /* Tünd Boz (kontrast üçün) */
+    --light-text: #ecf0f1;
 }
 
 /* Header */
 header {
-    background: #111;
+    background-color: var(--primary-green);
     color: white;
-    padding: 20px;
-    text-align: center;
+    padding: 20px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 .logo {
-    font-size: 32px;
-    font-weight: bold;
+    float: left;
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--primary-yellow);
 }
 
-nav a {
+nav {
+    float: right;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav ul li {
+    display: inline;
+    margin-left: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: 400;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--primary-yellow);
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, var(--primary-yellow) 0%, var(--primary-green) 100%);
+    color: white;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 80px; /* Header üçün boşluq */
+}
+
+.hero-content h2 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 30px;
+    background-color: var(--dark-bg);
     color: white;
     text-decoration: none;
-    margin: 0 10px;
+    border-radius: 25px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
 }
 
-/* Main */
-.container {
-    padding: 20px;
+.btn:hover {
+    background-color: #34495e;
 }
 
-/* Məhsullar */
+/* Məhsullar Bölməsi */
 .products {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
+    padding: 60px 0;
 }
 
-.product {
-    background: white;
-    width: 250px;
-    padding: 15px;
-    border-radius: 12px;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+.section-title {
     text-align: center;
+    font-size: 36px;
+    margin-bottom: 40px;
+    color: var(--secondary-green);
 }
 
-.product img {
-    width: 100%;
+.dark-bg {
+    background-color: var(--dark-bg);
+    color: var(--light-text);
+}
+
+.yellow-text {
+    color: var(--primary-yellow) !important;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.product-card {
+    background: white;
     border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-top: 5px solid;
 }
 
-.product h3 {
-    margin: 10px 0;
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+
+.yellow-card {
+    border-color: var(--primary-yellow);
+}
+
+.green-card {
+    border-color: var(--primary-green);
+}
+
+.product-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.product-card h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.product-card p {
+    color: #777;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.dark-bg .product-card p {
+    color: #bbb;
 }
 
 .price {
-    font-size: 20px;
-    font-weight: bold;
-}
-
-/* Düymə */
-button {
-    background: #111;
-    color: white;
-    border: none;
-    padding: 12px 20px;
-    border-radius: 8px;
-    cursor: pointer;
-}
-
-button:hover {
-    background: #333;
+    font-weight: 600;
+    font-size: 18px;
+    color: var(--secondary-green);
 }
 
 /* Footer */
 footer {
-    background: #111;
+    background-color: var(--secondary-green);
     color: white;
+    padding: 30px 0;
     text-align: center;
-    padding: 15px;
-    margin-top: 30px;
+}
+
+/* Mobil uyğunlaşdırma */
+@media (max-width: 768px) {
+    .logo, nav {
+        float: none;
+        text-align: center;
+        width: 100%;
+    }
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+    .hero-content h2 {
+        font-size: 32px;
+    }
 }
