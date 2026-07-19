@@ -1,4 +1,3 @@
-/* Qlobal Tənzimləmələr */
 * {
     margin: 0;
     padding: 0;
@@ -12,7 +11,7 @@ html {
 body {
     font-family: 'Plus Jakarta Sans', sans-serif;
     background-color: #fafbfa;
-    color: #151515;
+    color: #111;
 }
 
 .container {
@@ -25,24 +24,24 @@ body {
     --emerald-green: #0a3d2e;
     --soft-green: #16644d;
     --gold-accent: #c5a028;
-    --dark-neutral: #0b0d0c;
     --border-light: #e6ebe7;
 }
 
-/* Müasir və Sabit Üst Menyu */
+/* Təmiz və Müasir Header */
 header {
-    background-color: #ffffff !important; /* Yaşıl fonu tamamilə ağ etdik */
+    background-color: #ffffff;
     border-bottom: 1px solid var(--border-light);
-    position: relative;
+    position: fixed;
     width: 100%;
-    z-index: 999;
+    top: 0;
+    z-index: 1000;
 }
 
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 0;
+    padding: 18px 0;
 }
 
 .logo {
@@ -51,35 +50,42 @@ header {
     text-decoration: none;
     letter-spacing: 2px;
     color: var(--emerald-green);
+    cursor: pointer;
 }
 
 .nav-links {
     display: flex;
     list-style: none;
-    gap: 25px;
+    gap: 30px;
 }
 
 .nav-links a {
     text-decoration: none;
-    color: #444;
+    color: #333;
     font-size: 14px;
     font-weight: 600;
     text-transform: uppercase;
+    transition: color 0.2s;
+}
+
+.nav-links a:hover {
+    color: var(--gold-accent);
 }
 
 .auth-buttons {
     display: flex;
-    gap: 12px;
+    gap: 10px;
 }
 
 .auth-btn {
-    padding: 10px 20px;
+    padding: 8px 18px;
     background: none;
     border: 1px solid var(--emerald-green);
     color: var(--emerald-green);
     font-weight: 600;
     cursor: pointer;
     border-radius: 4px;
+    transition: 0.2s;
 }
 
 .register-trigger {
@@ -87,58 +93,139 @@ header {
     color: white;
 }
 
-/* Şəkillərin HD və Düzgün Ölçüdə Görünməsi */
-.grid-layout {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    margin-top: 20px;
+.register-trigger:hover {
+    background-color: var(--gold-accent);
+    border-color: var(--gold-accent);
 }
 
+/* Hero Section */
+.hero-section {
+    position: relative;
+    background-image: url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1600&q=80');
+    background-size: cover;
+    background-position: center;
+    height: 45vh;
+    display: flex;
+    align-items: center;
+    margin-top: 65px;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(to right, rgba(10, 61, 46, 0.85), rgba(0, 0, 0, 0.4));
+}
+
+.hero-content {
+    position: relative;
+    color: white;
+    z-index: 2;
+}
+
+.sub-title {
+    color: var(--gold-accent);
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 3px;
+    font-weight: 600;
+}
+
+.hero-content h2 {
+    font-size: 40px;
+    margin: 8px 0;
+}
+
+/* Kataloq və Grid */
+.catalog-section {
+    padding: 50px 0;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-header h2 {
+    font-size: 28px;
+    color: var(--emerald-green);
+}
+
+.underline {
+    width: 50px;
+    height: 2px;
+    background-color: var(--gold-accent);
+    margin: 10px auto 0 auto;
+}
+
+.grid-layout {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+/* Professional Məhsul Kartları */
 .item-card {
     background: white;
     border: 1px solid var(--border-light);
     border-radius: 6px;
     overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.item-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
 }
 
 .img-wrapper {
     width: 100%;
-    height: 350px; /* Şəkillərin çox böyük olmasının qarşısını alır */
-    overflow: hidden;
+    height: 320px;
+    background-color: #f7f7f7;
 }
 
 .img-wrapper img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Şəkli HD keyfiyyətdə qutunun içinə tam otuzdurur */
+    object-fit: cover;
 }
 
 .card-info {
     padding: 20px;
 }
 
-.sub-cat {
-    display: inline-block;
-    font-size: 12px;
-    color: var(--gold-accent);
+.brand-tag {
+    display: block;
+    font-size: 11px;
     font-weight: 700;
     text-transform: uppercase;
-    margin-bottom: 5px;
+    color: var(--gold-accent);
+}
+
+.sub-cat {
+    display: block;
+    font-size: 12px;
+    color: #777;
+    margin-bottom: 8px;
+}
+
+.card-info h3 {
+    font-size: 17px;
+    font-weight: 600;
+    height: 44px;
+    overflow: hidden;
+    margin-bottom: 12px;
 }
 
 .card-footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 15px;
-    padding-top: 15px;
     border-top: 1px solid var(--border-light);
+    padding-top: 15px;
 }
 
 .item-price {
-    font-size: 18px;
+    font-size: 17px;
     font-weight: 700;
     color: var(--emerald-green);
 }
@@ -149,23 +236,82 @@ header {
     color: white;
     border: none;
     font-weight: 600;
+    font-size: 13px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background 0.2s;
+}
+
+.buy-btn:hover {
+    background-color: var(--soft-green);
+}
+
+/* Modallar */
+.modal-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 2000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-box {
+    background: white;
+    padding: 30px;
+    width: 90%;
+    max-width: 400px;
+    border-radius: 6px;
+    position: relative;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px; right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #999;
+}
+
+.modal-box input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.input-row {
+    display: flex;
+    gap: 10px;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--emerald-green);
+    color: white;
+    border: none;
+    font-weight: 600;
     cursor: pointer;
     border-radius: 4px;
 }
 
-/* Mobil Telefonlar Üçün Düzəliş (Üst-üstə minməməsi üçün) */
+.payment-btn {
+    background-color: var(--gold-accent);
+}
+
+footer {
+    background-color: #0d0f0e;
+    color: #666;
+    padding: 25px 0;
+    text-align: center;
+    font-size: 13px;
+    margin-top: 40px;
+}
+
 @media (max-width: 768px) {
-    .navbar {
-        flex-direction: column;
-        gap: 15px;
-        text-align: center;
-    }
-    .nav-links {
-        flex-direction: row;
-        gap: 15px;
-        justify-content: center;
-    }
-    .img-wrapper {
-        height: 300px;
-    }
+    .navbar { flex-direction: column; gap: 15px; }
+    .hero-content h2 { font-size: 30px; }
 }
